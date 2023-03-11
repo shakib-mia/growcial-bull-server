@@ -4,7 +4,7 @@ const cors = require('cors')
 
 var BSEAPI = require('./bse/index');
 var NSEAPI = require('./nse/index');
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 var app = express();
 
