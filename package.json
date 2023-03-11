@@ -2,10 +2,13 @@
   "name": "stock-market-india",
   "version": "1.0.0",
   "description": "\"An API Library which fetches data from Bombay Stock Exchange and National Stock Exchange and returns data in JSON format.\"",
-  "main": "app.js",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js 3000"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
