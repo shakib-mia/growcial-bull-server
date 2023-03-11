@@ -122,12 +122,12 @@ app.get("/nse/get_52_week_high", (req, res, next) => {
 
 // Get 52 weeks all low stocks in NSE - JSON
 // Example: http://localhost:3000/nse/get_52_week_low
-app.get("/nse/get_52_week_low", (req, res, next) => {
-	NSEAPI.get52WeekLow()
-		.then(function (response) {
-			res.json(response.data);
-		});
-});
+// app.get("/nse/get_52_week_low", (req, res, next) => {
+// 	NSEAPI.get52WeekLow()
+// 		.then(function (response) {
+// 			res.json(response.data);
+// 		});
+// });
 
 // Get the NSE stocks whose values are highest - JSON
 // Example: http://localhost:3000/nse/get_top_value_stocks
