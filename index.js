@@ -4,7 +4,6 @@ const cors = require('cors')
 
 var BSEAPI = require('./bse/index');
 var NSEAPI = require('./nse/index');
-
 const PORT = process.env.PORT || 4000;
 
 var app = express();
@@ -264,9 +263,6 @@ app.get("/bse/getTopTurnOvers", (req, res, next) => {
 
 module.exports = app;
 
-app.get('/', (req, res) => {
-	res.send('listening on port')
-})
 
 app.listen(PORT, () => {
 	console.log("Server running on port " + PORT);
