@@ -1,10 +1,9 @@
 // var API = require('indian-stock-exchange');
 var express = require("express");
-var API = require('./index');
 const cors = require('cors')
 
-var BSEAPI = API.BSE;
-var NSEAPI = API.NSE;
+var BSEAPI = require('./bse/index');
+var NSEAPI = require('./nse/index');
 const PORT = process.env.PORT || 4000;
 
 var app = express();
