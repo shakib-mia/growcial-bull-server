@@ -166,7 +166,7 @@ app.get("/get_chart_data_new", (req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-	res.send(`listening on port ${PORT}`)
+	res.send(`listening to port ${PORT}`)
 })
 
 
