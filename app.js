@@ -1,16 +1,15 @@
 // var API = require('indian-stock-exchange');
 var express = require("express");
 var API = require('./index');
+const cors = require('cors')
 
 var BSEAPI = API.BSE;
 var NSEAPI = API.NSE;
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 var app = express();
 
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
+app.use(cors())
 
 // National Stock Exchange (NSE) APIS
 
@@ -54,7 +53,7 @@ app.get("/nse/get_quote_info", (req, res, next) => {
 // Example: http://localhost:3000/nse/get_multiple_quote_info?companyNames=TCS,WIPRO
 app.get("/nse/get_multiple_quote_info", (req, res, next) => {
   const companyNames = req.query.companyNames.split(",");
-  NSEAPI.getMultipleQuoteInfo(companyNames).then(r =>  res.json(r));
+  NSEAPI.getMultipleQuoteInfo(companyNames).then(r => res.json(r));
 });
 
 // Get the top 10 gainers of NSE - JSON
@@ -264,3 +263,8 @@ app.get("/bse/getTopTurnOvers", (req, res, next) => {
 });
 
 module.exports = app;
+
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
