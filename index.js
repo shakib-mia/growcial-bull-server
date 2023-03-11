@@ -60,7 +60,8 @@ app.get("/nse/get_multiple_quote_info", (req, res, next) => {
 app.get("/nse/get_gainers", (req, res, next) => {
 	NSEAPI.getGainers()
 		.then(function (response) {
-			res.json(response.data);
+			// res.json(response.data);
+			res.send(response.data)
 		});
 });
 
@@ -166,7 +167,9 @@ app.get("/nse/get_chart_data_new", (req, res, next) => {
 		});
 });
 
-module.exports = app;
+app.get('/', (req, res) => {
+	res.send(`listening on port ${PORT}`)
+})
 
 
 app.listen(PORT, () => {
